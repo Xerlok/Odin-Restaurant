@@ -3,6 +3,16 @@
     src: url(./fonts/Cyberpunk.otf);
 }
 
+@font-face {
+    font-family: roboto-regular;
+    src: url(./fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: roboto-bold;
+    src: url(./fonts/Roboto-Bold.ttf);
+}
+
 html,
 body {
     height: 100%;
@@ -11,11 +21,18 @@ body {
     box-sizing: border-box;
 }
 
+h1,
+h2 {
+    margin: 0px;
+}
+
 #content {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100%;
+    font-family: roboto-regular;
+    background-image: url(./img/city.png);
 }
 
 .header {
@@ -25,7 +42,7 @@ body {
     align-items: center;
     gap: 2rem;
     width: 100%;
-    background-image: url(./img/city.png);
+    padding-bottom: 1rem;
 }
 
 .header button {
@@ -46,12 +63,39 @@ body {
     justify-content: flex-start;
     align-items: center;
     gap: 2rem;
-    width: 100%;
+    width: 1500px;
     background-color: #ffe4e6;
+    font-size: 1.5rem;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 15px 50px;
+    box-shadow: inset 0 0px 10px #f43f5e;
+}
+
+.about-text {
+    background-color: #f43f5e;
+    border-radius: 15px 50px;
+    padding: 1rem;
+}
+
+.main-wrapper button {
+    font-size: 1.5rem;
+}
+
+.hours-header {
+    background-color: #f43f5e;
+    border-radius: 15px 50px;
+    padding: 1rem;
+}
+
+.hours-text {
+    background-color: #f43f5e;
+    border-radius: 15px 50px;
+    padding: 1rem;
 }
 
 .footer {
-    flex-grow: 0.5;
+    flex-grow: 1;
     background-color: black;
     color: white;
     width: 100%;
@@ -59,4 +103,5 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 1rem 0rem 1rem 0rem;
 }
