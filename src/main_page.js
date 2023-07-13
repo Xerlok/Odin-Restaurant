@@ -1,3 +1,7 @@
+import insta from './img/instagram.svg';
+import facebook from './img/facebook.svg';
+import jill from './img/jill.png';
+
 export default function renderMainPage() {
     const container = document.createElement('div');
     container.setAttribute('id', 'content');
@@ -9,6 +13,7 @@ export default function renderMainPage() {
         const menuBtn = document.createElement('button');
         const contactBtn = document.createElement('button');
         const header1 = document.createElement('h1');
+        const menu2 = document.createElement('div');
         const socials = document.createElement('div');
         const orderBtn = document.createElement('button');
         const img1 = document.createElement('img');
@@ -16,6 +21,7 @@ export default function renderMainPage() {
 
         header.classList.add('header')
         menu.classList.add('menu');
+        menu2.classList.add('menu2');
         homeBtn.classList.add('top-menu');
         menuBtn.classList.add('top-menu');
         contactBtn.classList.add('top-menu');
@@ -31,11 +37,14 @@ export default function renderMainPage() {
         orderBtn.innerText = 'Order Now';
 
         img1.setAttribute('alt', 'instagram');
+        img1.src = insta;
         img2.setAttribute('alt', 'facebook');
+        img2.src = facebook;
 
         menu.append(homeBtn, menuBtn, contactBtn);
         socials.append(img1, img2);
-        header.append(menu, header1, socials, orderBtn);
+        menu2.append(socials, orderBtn);
+        header.append(menu, header1, menu2);
 
         return header;
     }
@@ -43,12 +52,16 @@ export default function renderMainPage() {
     function createMainContent() {
         const mainWrapp = document.createElement('div');
         const header2 = document.createElement('h2');
+        const about = document.createElement('div')
+        const aboutImg = document.createElement('img');
         const aboutText = document.createElement('div');
         const menuBtn = document.createElement('button');
         const hoursHeader = document.createElement('div');
         const hoursText = document.createElement('div');
 
         mainWrapp.classList.add('main-wrapper');
+        about.classList.add('about');
+        aboutImg.classList.add('about-img')
         aboutText.classList.add('about-text');
         menuBtn.classList.add('food-menu');
         hoursHeader.classList.add('hours-header');
@@ -72,7 +85,10 @@ export default function renderMainPage() {
         Saturday: 8pm - 10am<br>
         Sunday: 8pm - 10am`;
 
-        mainWrapp.append(header2, aboutText, menuBtn, hoursHeader, hoursText);
+        aboutImg.src = jill;
+
+        about.append(aboutImg, aboutText);
+        mainWrapp.append(header2, about, menuBtn, hoursHeader, hoursText);
 
         return mainWrapp;
     }
@@ -84,7 +100,7 @@ export default function renderMainPage() {
         footer.classList.add('footer');
         copyright.classList.add('copyright');
 
-        copyright.innerText = `That's like your opinion man 2023`;
+        copyright.innerText = `Copyright Cyber Bar 2023`;
 
         footer.appendChild(copyright);
 
