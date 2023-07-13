@@ -1,11 +1,22 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: 'development',
-    entry: './src/index.js',
+    entry: {
+        index: './src/index.js',
+        main_page: './src/main_page.js',
+        menu: './src/menu.js',
+        contacts: './src/contacts.js',
+      },
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: 'Cyber Bar',
+        }),
+    ],
     devtool: 'inline-source-map',
     output: {
-    filename: 'main.js',
+    filename: '[name].main.js',
     path: path.resolve(__dirname, 'dist'),
     },
     module: {
