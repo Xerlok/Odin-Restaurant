@@ -1,6 +1,7 @@
 import insta from './img/instagram.svg';
 import facebook from './img/facebook.svg';
 import jill from './img/jill.png';
+import logo from './img/mei.jpeg';
 
 export default function renderMainPage() {
     const container = document.createElement('div');
@@ -27,6 +28,7 @@ export default function renderMainPage() {
         contactBtn.classList.add('top-menu');
         socials.classList.add('socials')
         orderBtn.classList.add('order-now');
+        orderBtn.classList.add('top-menu');
         img1.classList.add('insta');
         img2.classList.add('facebook');
 
@@ -57,15 +59,24 @@ export default function renderMainPage() {
         const aboutText = document.createElement('div');
         const menuBtn = document.createElement('button');
         const hoursHeader = document.createElement('div');
+        const hoursHeaderTxt = document.createElement('div')
+        const imgHours1 = document.createElement('img');
+        const hours = document.createElement('div')
         const hoursText = document.createElement('div');
+        const imgHours2 = document.createElement('img');
 
         mainWrapp.classList.add('main-wrapper');
         about.classList.add('about');
         aboutImg.classList.add('about-img')
         aboutText.classList.add('about-text');
         menuBtn.classList.add('food-menu');
+        menuBtn.classList.add('top-menu');
         hoursHeader.classList.add('hours-header');
-        hoursText.classList.add('hours-text');
+        hoursHeaderTxt.classList.add('hours-header-txt');
+        hours.classList.add('hours');
+        hoursText.classList.add('hours-text')
+        imgHours1.classList.add('hours-img');
+        imgHours2.classList.add('hours-img');
 
         header2.innerText = 'Cyber Bar';
         aboutText.innerHTML = `
@@ -73,7 +84,7 @@ export default function renderMainPage() {
         We have the freshest processed foods in the whole Cyber City. We’re not your<br>
         typical bar and we like it that way.`;
         menuBtn.innerText = 'Our Menu';
-        hoursHeader.innerHTML = `
+        hoursHeaderTxt.innerHTML = `
         Hello, and welcome to our Cyberpunk Bar!<br>
         Our working hours:`;
         hoursText.innerHTML = `
@@ -86,9 +97,13 @@ export default function renderMainPage() {
         Sunday: 8pm - 10am`;
 
         aboutImg.src = jill;
+        imgHours1.src = logo;
+        imgHours2.src = logo;
 
+        hoursHeader.append(hoursHeaderTxt, imgHours1);
+        hours.append(hoursText, imgHours2);
         about.append(aboutImg, aboutText);
-        mainWrapp.append(header2, about, menuBtn, hoursHeader, hoursText);
+        mainWrapp.append(header2, about, menuBtn, hoursHeader, hours);
 
         return mainWrapp;
     }

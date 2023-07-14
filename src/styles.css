@@ -54,7 +54,7 @@ h2 {
     
 }
 
-.header button {
+.top-menu {
     box-shadow: inset 0 0px 5px #f43f5e;
     font-size: 1rem;
     appearance: none;
@@ -85,25 +85,25 @@ h2 {
     will-change: transform;
 }
 
-.header button:disabled {
+.top-menu:disabled {
     pointer-events: none;
 }
 
-.header button:hover {
+.top-menu:hover {
     color: #fff;
     background-color: #831843;
     box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
     transform: translateY(-2px);
 }
 
-.header button:active {
+.top-menu:active {
     box-shadow: none;
     transform: translateY(0);
 }
 
 .header h1 {
     color: white;
-    font-size: 5rem;
+    font-size: 4rem;
     font-family: cyber;
     text-align: center;
     width: 500px;
@@ -127,6 +127,7 @@ h2 {
 .facebook {
     filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(331deg) brightness(108%) contrast(101%);
     width: 35px;
+    cursor: pointer;
 }
 
 
@@ -140,18 +141,18 @@ h2 {
     width: 1500px;
     background-color: #ffe4e6;
     font-size: 1.5rem;
-    margin: 1rem;
+    margin-bottom: 1rem;
     padding: 1rem;
     border-radius: 15px 50px;
     box-shadow: inset 0 0px 10px #f43f5e;
 }
 
 h2 {
-    background-color: #0f172a98;
+    background-color: #1e293b;
     border-radius: 15px;
     width: 800px;
     text-align: center;
-    color: ;
+    color: #ffe4e6;
 }
 
 .about {
@@ -163,6 +164,9 @@ h2 {
 
 .about-img {
     height: 150px;
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.473);
+    border: 3px solid white;
 }
 
 .about-text {
@@ -176,14 +180,30 @@ h2 {
 
 .main-wrapper button {
     font-size: 1.5rem;
+    color: rgb(65, 63, 63);
 }
 
 .hours-header {
+    display: flex;
+    align-items: center;
+    align-self: flex-end;
+    gap: 1rem;
+}
+
+.hours-header-txt {
     background-color: #f43f5e;
     border-radius: 15px 50px;
     padding: 1rem;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.473);
     color: rgb(65, 63, 63);
+}
+
+.hours {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-end;
+    gap: 1rem;
 }
 
 .hours-text {
@@ -192,6 +212,13 @@ h2 {
     padding: 1rem;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.473);
     color: rgb(65, 63, 63);
+}
+
+.hours-img {
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.473);
+    border: 3px solid white;
 }
 
 .footer {
