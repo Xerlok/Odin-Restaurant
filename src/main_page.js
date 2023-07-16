@@ -1,3 +1,4 @@
+'use strict';
 import insta from './img/instagram.svg';
 import facebook from './img/facebook.svg';
 import jill from './img/jill.png';
@@ -122,7 +123,9 @@ export default function renderMainPage() {
         return footer;
     }
 
-    container.append(createHeader(), createMainContent(), createFooter());
-    return container;
+    const mainWrapp = createMainContent();
+    container.append(createHeader(), mainWrapp, createFooter());
+    
+    return {container, mainWrapp};
 }
 

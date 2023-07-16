@@ -130,7 +130,7 @@ h2 {
     cursor: pointer;
 }
 
-
+/* Main page */
 .main-wrapper {
     flex-grow: 3;
     display: flex;
@@ -232,4 +232,27 @@ h2 {
     align-items: center;
     padding: 1rem 0rem 1rem 0rem;
     font-family: clacon;
+}
+
+/* Menu page */
+.menu-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 1500px;
+}
+
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2rem;
+}
+
+.drink {
+    border: 2px solid black;
+}
+
+.drink-img {
+    width: 200px;
 }
