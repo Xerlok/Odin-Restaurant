@@ -21,6 +21,7 @@ export default function renderContacts() {
     Phone: +345 875 64 28<br>
     Email: cyber@bar.com`;
     address.innerHTML = `
+    Address:<br>
     CYBER BAR<br>
     Old port 3727<br>
     Keck, Cyprus`;

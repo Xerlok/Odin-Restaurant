@@ -1,6 +1,17 @@
 'use strict';
 import placeholder from './img/placeholder.jpg';
 import kek from './img/kek.jpg';
+import mojito from './img/mojito.png';
+import daiquiri from './img/daiquiri.png';
+import manhattan from './img/manhattan.png';
+import mule from './img/mule.png';
+import pina from './img/pina.png';
+import russian from './img/russian.png';
+import beer from './img/beer.png';
+import vodka from './img/vodka.png';
+import wine from './img/wine.png';
+import absent from './img/absent.png';
+import spiritus from './img/spiritus.png';
 
 export default function renderMenuPage() {
     const menu_wrapper = document.createElement('div');
@@ -21,26 +32,19 @@ export default function renderMenuPage() {
         drinks.push(newDrink);
     }
 
-    createDrink('Beer', '10$', placeholder, 'beer glass');
-    createDrink('Wine', '20$', placeholder, 'red wine glass');
-    createDrink('Vodka', '35$', placeholder, 'vodka shot');
-    createDrink('Absent', '50$', placeholder, 'absent shot');
-    createDrink('Mohito', '25$', placeholder, 'mohito coctail');
-    createDrink('Kek', '115$', placeholder, 'Big Kek');
+    createDrink('Mojito', '10$', mojito, 'beer glass');
+    createDrink('Manhattan', '20$', manhattan, 'red wine glass');
+    createDrink('Daiquiri', '35$', daiquiri, 'vodka shot');
+    createDrink('Moscow Mule', '20$', mule, 'absent shot');
+    createDrink('Piña Colada', '20$', pina, 'mohito coctail');
+    createDrink('White Russian', '30$', russian, 'Big Kek');
 
-    createDrink('Beer', '10$', placeholder, 'beer glass');
-    createDrink('Wine', '20$', placeholder, 'red wine glass');
-    createDrink('Vodka', '35$', placeholder, 'vodka shot');
-    createDrink('Absent', '50$', placeholder, 'absent shot');
-    createDrink('Mohito', '25$', placeholder, 'mohito coctail');
-    createDrink('Kek', '115$', placeholder, 'Big Kek');
-
-    createDrink('Beer', '10$', placeholder, 'beer glass');
-    createDrink('Wine', '20$', placeholder, 'red wine glass');
-    createDrink('Vodka', '35$', placeholder, 'vodka shot');
-    createDrink('Absent', '50$', placeholder, 'absent shot');
-    createDrink('Mohito', '25$', placeholder, 'mohito coctail');
-    createDrink('Kek', '115$', kek, 'Big Kek');
+    createDrink('Beer', '5$', beer, 'beer glass');
+    createDrink('Wine', '10$', wine, 'red wine glass');
+    createDrink('Vodka', '15$', vodka, 'vodka shot');
+    createDrink('Absent', '20$', absent, 'absent shot');
+    createDrink('Spirytus', '30$', spiritus, 'mohito coctail');
+    createDrink('Big Kek', '115$', kek, 'Big Kek');
 
     
     for (let i = 0; i < drinks.length; i++) {

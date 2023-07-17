@@ -44,12 +44,20 @@ export default function renderMainPage() {
         img2.setAttribute('alt', 'facebook');
         img2.src = facebook;
 
+        img1.addEventListener('click', () => {
+            window.open('https://www.instagram.com/','_blank');
+        })
+
+        img2.addEventListener('click', () => {
+            window.open('https://www.facebook.com/','_blank');
+        })
+
         menu.append(homeBtn, menuBtn, contactBtn);
         socials.append(img1, img2);
         menu2.append(socials, orderBtn);
         header.append(menu, header1, menu2);
 
-        return {header, homeBtn, menuBtn, contactBtn};
+        return {header, homeBtn, menuBtn, contactBtn, orderBtn};
     }
 
     function createMainContent() {
@@ -109,7 +117,7 @@ export default function renderMainPage() {
         mainWrapp.append(header2, about, menuBtn, hoursHeader, hours);
         mainContent.appendChild(mainWrapp);
 
-        return {mainContent, mainWrapp};
+        return {mainContent, mainWrapp, menuBtn};
     }
 
     function createFooter() {
@@ -134,9 +142,11 @@ export default function renderMainPage() {
 
     const homeBtn = header.homeBtn;
     const menuBtn = header.menuBtn;
+    const menuBtnM = mainCont.menuBtn;
     const contactBtn = header.contactBtn;
+    const orderBtn = header.orderBtn;
 
     
-    return {container, mainContent, mainWrapp, homeBtn, menuBtn, contactBtn};
+    return {container, mainContent, mainWrapp, homeBtn, menuBtn, contactBtn, menuBtnM, orderBtn};
 }
 

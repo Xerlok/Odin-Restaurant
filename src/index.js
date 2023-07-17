@@ -30,3 +30,10 @@ main.homeBtn.addEventListener('click', () => {
 main.contactBtn.addEventListener('click', () => {
     switchPage(renderContacts());
 })
+
+main.menuBtnM.addEventListener('click', () => {
+    switchPage(renderMenuPage());
+})
+main.orderBtn.addEventListener('click', () => {
+    alert(`You can't handle my coktails. They are too strong for you`);
+})
