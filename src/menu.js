@@ -1,5 +1,6 @@
 'use strict';
-import placeholder from './img/placeholder.jpg'
+import placeholder from './img/placeholder.jpg';
+import kek from './img/kek.jpg';
 
 export default function renderMenuPage() {
     const menu_wrapper = document.createElement('div');
@@ -34,6 +35,13 @@ export default function renderMenuPage() {
     createDrink('Mohito', '25$', placeholder, 'mohito coctail');
     createDrink('Kek', '115$', placeholder, 'Big Kek');
 
+    createDrink('Beer', '10$', placeholder, 'beer glass');
+    createDrink('Wine', '20$', placeholder, 'red wine glass');
+    createDrink('Vodka', '35$', placeholder, 'vodka shot');
+    createDrink('Absent', '50$', placeholder, 'absent shot');
+    createDrink('Mohito', '25$', placeholder, 'mohito coctail');
+    createDrink('Kek', '115$', kek, 'Big Kek');
+
     
     for (let i = 0; i < drinks.length; i++) {
         const drink = document.createElement('div');
@@ -59,7 +67,7 @@ export default function renderMenuPage() {
     menu_header.classList.add('menu-header');
     menu_items.classList.add('menu-items');
 
-    menu_header.innerText = 'Our Menu:';
+    menu_header.innerText = 'Our Menu';
 
     menu_wrapper.append(menu_header, menu_items);
 

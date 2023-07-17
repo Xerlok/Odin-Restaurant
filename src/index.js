@@ -2,9 +2,9 @@
 import './styles.css';
 import renderMainPage from './main_page';
 import renderMenuPage from './menu';
+import renderContacts from './contacts';
 
 const main = renderMainPage();
-const mainWrapper = main.mainWrapp;
 
 document.body.appendChild(main.container);
 
@@ -15,8 +15,18 @@ function removeAllChildren(yourNode) {
 }
 
 function switchPage (page) {
-    removeAllChildren(main.mainWrapp);
-    mainWrapper.appendChild(page);
+    removeAllChildren(main.mainContent);
+    main.mainContent.appendChild(page);
 }
 
-switchPage(renderMenuPage());
+main.menuBtn.addEventListener('click', () => {
+    switchPage(renderMenuPage());
+})
+
+main.homeBtn.addEventListener('click', () => {
+    switchPage(main.mainWrapp);
+})
+
+main.contactBtn.addEventListener('click', () => {
+    switchPage(renderContacts());
+})

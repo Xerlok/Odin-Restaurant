@@ -1,8 +1,8 @@
 'use strict';
 import insta from './img/instagram.svg';
 import facebook from './img/facebook.svg';
-import jill from './img/jill.png';
-import logo from './img/mei.jpeg';
+import jill from './img/jill.jpg';
+import logo from './img/mei.jpg';
 
 export default function renderMainPage() {
     const container = document.createElement('div');
@@ -24,9 +24,9 @@ export default function renderMainPage() {
         header.classList.add('header')
         menu.classList.add('menu');
         menu2.classList.add('menu2');
-        homeBtn.classList.add('top-menu');
-        menuBtn.classList.add('top-menu');
-        contactBtn.classList.add('top-menu');
+        homeBtn.classList.add('top-menu', 'home-btn');
+        menuBtn.classList.add('top-menu', 'top-menu-btn');
+        contactBtn.classList.add('top-menu', 'contact-btn');
         socials.classList.add('socials')
         orderBtn.classList.add('order-now');
         orderBtn.classList.add('top-menu');
@@ -49,10 +49,11 @@ export default function renderMainPage() {
         menu2.append(socials, orderBtn);
         header.append(menu, header1, menu2);
 
-        return header;
+        return {header, homeBtn, menuBtn, contactBtn};
     }
 
     function createMainContent() {
+        const mainContent = document.createElement('div');
         const mainWrapp = document.createElement('div');
         const header2 = document.createElement('h2');
         const about = document.createElement('div')
@@ -66,6 +67,7 @@ export default function renderMainPage() {
         const hoursText = document.createElement('div');
         const imgHours2 = document.createElement('img');
 
+        mainContent.classList.add('main-content');
         mainWrapp.classList.add('main-wrapper');
         about.classList.add('about');
         aboutImg.classList.add('about-img')
@@ -105,8 +107,9 @@ export default function renderMainPage() {
         hours.append(hoursText, imgHours2);
         about.append(aboutImg, aboutText);
         mainWrapp.append(header2, about, menuBtn, hoursHeader, hours);
+        mainContent.appendChild(mainWrapp);
 
-        return mainWrapp;
+        return {mainContent, mainWrapp};
     }
 
     function createFooter() {
@@ -123,9 +126,17 @@ export default function renderMainPage() {
         return footer;
     }
 
-    const mainWrapp = createMainContent();
-    container.append(createHeader(), mainWrapp, createFooter());
+    const mainCont = createMainContent();
+    const mainContent = mainCont.mainContent;
+    const mainWrapp = mainCont.mainWrapp;
+    const header = createHeader();
+    container.append(header.header, mainContent, createFooter());
+
+    const homeBtn = header.homeBtn;
+    const menuBtn = header.menuBtn;
+    const contactBtn = header.contactBtn;
+
     
-    return {container, mainWrapp};
+    return {container, mainContent, mainWrapp, homeBtn, menuBtn, contactBtn};
 }
 
